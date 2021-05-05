@@ -545,6 +545,7 @@ function! zettel#vimwiki#prepare_template_variables(filename, title)
   let variables = {}
   let variables.title = a:title
   let variables.date = s:zettel_date
+  let variables.id = strftime("%Y%m%d%H%M%S") 
   " add variables from front_matter, to make them available in the template
   let front_matter = zettel#vimwiki#get_option("front_matter")
   if !empty(front_matter)
